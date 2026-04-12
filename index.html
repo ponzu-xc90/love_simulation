@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>めんどくさい彼ゲーム</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 * {
   margin: 0;
@@ -15,8 +12,8 @@
 }
 
 body {
-  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', Meiryo, sans-serif;
-  background: linear-gradient(135deg, #c9d6e3 0%, #dde4ec 50%, #e8edf4 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+  background: #fff5fb;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,18 +23,18 @@ body {
 
 #app {
   width: 100%;
-  max-width: 420px;
+  max-width: 430px;
   height: 100dvh;
   max-height: 750px;
-  background: #fff;
+  background: #fff5fb;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 430px) {
   #app {
     max-height: 100dvh;
     box-shadow: none;
@@ -101,7 +98,7 @@ body {
   padding: 16px 52px;
   font-size: 19px;
   font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: inherit;
   border-radius: 32px;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
@@ -129,43 +126,46 @@ body {
 }
 
 .chat-header {
-  background: linear-gradient(135deg, #3ecf5e 0%, #34c759 50%, #2ab54b 100%);
-  color: #fff;
-  padding: 14px 16px;
+  background: #e8b8d8;
+  padding: 12px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   position: relative;
   z-index: 1;
 }
 
 .chat-header-icon {
-  width: 38px;
-  height: 38px;
-  background: rgba(255,255,255,0.25);
-  border: 2px solid rgba(255,255,255,0.6);
+  width: 36px;
+  height: 36px;
+  background: #c87ab0;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   flex-shrink: 0;
 }
 
+.chat-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .chat-header-name {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b2560;
+  letter-spacing: 0.02em;
 }
 
 .chat-header-status {
-  font-size: 11px;
-  color: rgba(255,255,255,0.8);
-  margin-left: auto;
+  font-size: 9px;
+  color: #c87ab0;
   font-weight: 400;
 }
 
@@ -173,7 +173,7 @@ body {
   flex: 1;
   overflow-y: auto;
   padding: 16px 12px 8px;
-  background: linear-gradient(180deg, #dce8f0 0%, #e4edf5 100%);
+  background: #fff5fb;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -197,51 +197,49 @@ body {
 }
 
 .msg-icon {
-  width: 34px;
-  height: 34px;
-  background: linear-gradient(135deg, #34c759, #2ab54b);
+  width: 28px;
+  height: 28px;
+  background: #c87ab0;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 9px;
   color: #fff;
   font-weight: 700;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(52,199,89,0.35);
 }
 
 .bubble {
-  max-width: 72%;
-  padding: 10px 14px;
-  border-radius: 18px;
-  font-size: 15px;
-  line-height: 1.55;
+  max-width: 88%;
+  padding: 9px 12px;
   word-break: break-word;
   letter-spacing: 0.01em;
 }
 
 .him .bubble {
   background: #ffffff;
-  color: #1c1c1e;
-  border-bottom-left-radius: 5px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
+  border: 1.5px solid #f0c0dc;
+  border-radius: 18px 18px 18px 4px;
+  color: #8b3070;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .me .bubble {
-  background: linear-gradient(135deg, #3ecf5e, #34c759);
+  background: #e8a8c8;
+  border-radius: 18px 18px 4px 18px;
   color: #fff;
-  border-bottom-right-radius: 5px;
-  box-shadow: 0 2px 8px rgba(52,199,89,0.35), 0 1px 3px rgba(0,0,0,0.08);
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .read-marker {
-  font-size: 11px;
-  color: rgba(100,120,130,0.75);
+  font-size: 10px;
+  color: #c87ab0;
   flex-shrink: 0;
   align-self: flex-end;
   margin-bottom: 2px;
-  font-weight: 500;
 }
 
 @keyframes fadeInUp {
@@ -253,43 +251,43 @@ body {
    Choices Area
 ===================== */
 .choices-area {
-  background: #f2f2f7;
-  padding: 10px 12px 12px;
+  background: #fdeef7;
+  padding: 12px 10px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
   flex-shrink: 0;
-  border-top: 1px solid rgba(0,0,0,0.07);
+  border-top: 1.5px solid #f0c0dc;
+}
+
+.choices-label {
+  color: #c07090;
+  font-size: 9px;
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .choice-btn {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fdf9 100%);
-  border: 1.5px solid #34c759;
-  color: #1c1c1e;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: 'Noto Sans JP', sans-serif;
-  border-radius: 24px;
+  background: #ffffff;
+  border: 1.5px solid #e8a8cc;
+  border-radius: 20px;
+  color: #a04080;
+  padding: 9px 12px;
+  font-size: 11px;
+  font-weight: 400;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.15s;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(52,199,89,0.12), 0 1px 3px rgba(0,0,0,0.06);
-  letter-spacing: 0.01em;
-  line-height: 1.45;
+  transition: background 0.12s;
+  text-align: center;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
-.choice-btn:hover {
-  background: linear-gradient(135deg, #edfaf1 0%, #e4f7ea 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(52,199,89,0.2), 0 2px 5px rgba(0,0,0,0.07);
+.choice-btn:last-child {
+  margin-bottom: 0;
 }
 
 .choice-btn:active {
-  background: linear-gradient(135deg, #34c759, #2ab54b);
-  color: #fff;
-  transform: scale(0.98);
-  box-shadow: 0 2px 6px rgba(52,199,89,0.3);
+  background: #fde0f0;
 }
 
 /* =====================
@@ -301,122 +299,59 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
-  padding: 32px 24px;
+  background: #ffffff;
+  padding: 40px 24px;
   text-align: center;
-  gap: 0;
 }
 
 .gameover-title {
-  color: #ff6b35;
-  font-size: 44px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 20px rgba(255,107,53,0.5), 0 3px 8px rgba(0,0,0,0.4);
-  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 5px;
+  white-space: nowrap;
+  margin-bottom: 16px;
 }
 
-.gameover-status {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  padding: 5px 18px;
-  border-radius: 20px;
-  margin-bottom: 24px;
-}
-
-.gameover-status.blocked {
-  color: #ff6b35;
-  background: rgba(255,107,53,0.15);
-  border: 1px solid rgba(255,107,53,0.4);
-}
-
-.gameover-status.over {
-  color: #aaa;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-.gameover-reason-box {
-  background: rgba(255,255,255,0.07);
-  border: 1.5px solid rgba(255,255,255,0.15);
-  border-radius: 16px;
-  padding: 20px 20px;
-  width: 100%;
-  max-width: 340px;
-  margin-bottom: 28px;
-}
-
-.gameover-reason-label {
-  color: rgba(255,255,255,0.45);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+.gameover-divider {
+  width: 32px;
+  height: 1px;
+  background: #ccc;
+  margin-bottom: 20px;
 }
 
 .gameover-reason-text {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.65;
-  letter-spacing: 0.02em;
+  font-size: 11px;
+  color: #333;
+  line-height: 1.9;
+  text-align: center;
+  margin-bottom: 32px;
+  width: 100%;
 }
 
-.gameover-buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-retry {
-  background: linear-gradient(135deg, #34c759, #2ab54b);
-  color: #fff;
-  border: none;
-  padding: 14px 28px;
-  font-size: 16px;
-  font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
-  border-radius: 30px;
+.btn-retry-go {
+  width: 100%;
+  border: 1px solid #222;
+  background: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  color: #222;
+  font-family: inherit;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 16px rgba(52,199,89,0.4);
-  letter-spacing: 0.04em;
+  margin-bottom: 8px;
 }
 
-.btn-retry:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 22px rgba(52,199,89,0.45);
-}
-
-.btn-retry:active {
-  transform: scale(0.96);
-}
-
-.btn-share {
-  background: linear-gradient(135deg, #2c2c2e, #3a3a3c);
-  color: #fff;
-  border: none;
-  padding: 14px 28px;
-  font-size: 16px;
-  font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
-  border-radius: 30px;
+.btn-share-go {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  font-family: inherit;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-  letter-spacing: 0.04em;
-}
-
-.btn-share:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 22px rgba(0,0,0,0.4);
-}
-
-.btn-share:active {
-  transform: scale(0.96);
 }
 
 /* =====================
@@ -425,81 +360,99 @@ body {
 #clear-screen {
   display: none;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
-  background: linear-gradient(160deg, #fff1f5 0%, #ffe4ee 35%, #ffd6e7 65%, #ffcce0 100%);
-  padding: 32px 24px;
+  background: #fff9f5;
+  overflow-y: auto;
+}
+
+.clear-top {
+  background: #fff9f5;
+  padding: 20px 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  gap: 0;
+}
+
+.clear-svg-wrap {
+  margin-bottom: 12px;
+}
+
+.clear-congrats-label {
+  color: #c07090;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
 }
 
 .clear-title {
-  font-size: 56px;
-  font-weight: 900;
-  color: #e8194b;
-  text-shadow: 0 3px 12px rgba(232,25,75,0.25), 0 1px 4px rgba(0,0,0,0.1);
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-
-.clear-congrats {
-  font-size: 22px;
-  color: #1c1c1e;
+  color: #7a2050;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 18px;
-  letter-spacing: 0.04em;
+  margin-bottom: 4px;
 }
 
-.clear-card {
-  background: rgba(255,255,255,0.65);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 18px;
-  padding: 18px 20px;
+.clear-subtitle {
+  color: #d080b0;
+  font-size: 10px;
+}
+
+.clear-body {
+  padding: 10px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.clear-message-box {
+  background: #fde8f2;
+  border-radius: 12px;
+  padding: 10px 14px;
   width: 100%;
-  max-width: 320px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 20px rgba(232,25,75,0.1), 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.clear-text {
-  color: #3a3a3c;
-  font-size: 15px;
+  color: #a04070;
+  font-size: 10px;
   line-height: 1.8;
-  font-weight: 400;
 }
 
-.clear-rate {
-  color: #e8194b;
+.clear-rate-num {
+  color: #e060a0;
   font-size: 30px;
-  font-weight: 900;
-  margin-top: 12px;
-  letter-spacing: 0.03em;
+  font-weight: 700;
 }
 
 .clear-rate-sub {
-  color: #8e8e93;
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 4px;
+  color: #c07090;
+  font-size: 9px;
+  margin-top: 2px;
 }
 
-.clear-buttons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
+.btn-retry-cl {
+  width: 100%;
+  background: #e8a8c8;
+  border: none;
+  border-radius: 22px;
+  padding: 11px;
+  font-size: 12px;
+  color: #6b2040;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
 }
 
-.clear-buttons .btn-retry {
-  background: linear-gradient(135deg, #e8194b, #c8133e);
-  box-shadow: 0 4px 16px rgba(232,25,75,0.4);
-}
-
-.clear-buttons .btn-retry:hover {
-  box-shadow: 0 7px 22px rgba(232,25,75,0.45);
+.btn-share-cl {
+  width: 100%;
+  border: 2px solid #e8a8c8;
+  border-radius: 22px;
+  background: none;
+  padding: 11px;
+  font-size: 12px;
+  color: #c06090;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
 }
 </style>
 </head>
@@ -518,10 +471,10 @@ body {
   <div id="chat-screen">
     <div class="chat-header">
       <div class="chat-header-icon">彼</div>
-      <div>
-        <div class="chat-header-name">彼氏くん</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">かれし</div>
+        <div class="chat-header-status">オンライン</div>
       </div>
-      <span class="chat-header-status">オンライン</span>
     </div>
     <div class="chat-area" id="chat-area"></div>
     <div class="choices-area" id="choices-area"></div>
@@ -530,33 +483,55 @@ body {
   <!-- Game Over -->
   <div id="gameover-screen">
     <div class="gameover-title">GAME OVER</div>
-    <div id="gameover-status" class="gameover-status"></div>
-    <div class="gameover-reason-box">
-      <div class="gameover-reason-label">ゲームオーバーの理由</div>
-      <div class="gameover-reason-text" id="gameover-reason"></div>
-    </div>
-    <div class="gameover-buttons">
-      <button class="btn-retry" onclick="resetGame()">もう一回</button>
-      <button class="btn-share" id="gameover-share-btn">Xでシェア</button>
-    </div>
+    <div class="gameover-divider"></div>
+    <div class="gameover-reason-text" id="gameover-reason"></div>
+    <button class="btn-retry-go" onclick="resetGame()">もう一回</button>
+    <button class="btn-share-go" id="gameover-share-btn">X でシェア</button>
   </div>
 
   <!-- Clear -->
   <div id="clear-screen">
-    <div class="clear-title">CLEAR!</div>
-    <div class="clear-congrats">おめでとう!</div>
-    <div class="clear-card">
-      <div class="clear-text">
-        デートの約束ができました<br>
-        あなたは理不尽な彼との<br>
-        やり取りを完璧にこなしました
+    <div class="clear-top">
+      <div class="clear-svg-wrap">
+        <svg width="160" height="110" viewBox="0 0 160 110">
+          <!-- Stems -->
+          <rect x="77" y="62" width="4" height="38" fill="#c8a850"/>
+          <rect x="83" y="66" width="3" height="33" fill="#d4b860" transform="rotate(9,83,66)"/>
+          <rect x="73" y="66" width="3" height="33" fill="#c8a850" transform="rotate(-9,73,66)"/>
+          <!-- Pink flower -->
+          <circle cx="50" cy="46" r="14" fill="#f0c0d8"/>
+          <circle cx="50" cy="46" r="7" fill="#dda0c0"/>
+          <circle cx="50" cy="46" r="3" fill="#ffffff" opacity="0.6"/>
+          <!-- Peach flower -->
+          <circle cx="80" cy="30" r="15" fill="#f8d0a8"/>
+          <circle cx="80" cy="30" r="7.5" fill="#e4b888"/>
+          <circle cx="80" cy="30" r="3" fill="#ffffff" opacity="0.6"/>
+          <!-- Green flower -->
+          <circle cx="110" cy="46" r="14" fill="#c8e0b0"/>
+          <circle cx="110" cy="46" r="7" fill="#a8c890"/>
+          <circle cx="110" cy="46" r="3" fill="#ffffff" opacity="0.6"/>
+          <!-- Lavender flower left -->
+          <circle cx="34" cy="64" r="11" fill="#d8b8f0"/>
+          <circle cx="34" cy="64" r="5.5" fill="#b898d8"/>
+          <circle cx="34" cy="64" r="2.5" fill="#ffffff" opacity="0.6"/>
+          <!-- Yellow flower right -->
+          <circle cx="126" cy="64" r="11" fill="#f0e0a0"/>
+          <circle cx="126" cy="64" r="5.5" fill="#d8c880"/>
+          <circle cx="126" cy="64" r="2.5" fill="#ffffff" opacity="0.6"/>
+        </svg>
       </div>
-      <div class="clear-rate">クリア率: 0.046%</div>
-      <div class="clear-rate-sub">(めちゃくちゃ難しい)</div>
+      <div class="clear-congrats-label">CONGRATULATIONS</div>
+      <div class="clear-title">おめでとう！</div>
+      <div class="clear-subtitle">デートの約束ができました</div>
     </div>
-    <div class="clear-buttons">
-      <button class="btn-retry" onclick="resetGame()">もう一回</button>
-      <button class="btn-share" onclick="shareClearOnX()">Xでシェア</button>
+    <div class="clear-body">
+      <div class="clear-message-box">めんどくさい彼とのやり取りを完璧にこなしました</div>
+      <div>
+        <div class="clear-rate-num">0.046%</div>
+        <div class="clear-rate-sub">クリア率（めちゃくちゃ難しい）</div>
+      </div>
+      <button class="btn-retry-cl" onclick="resetGame()">もう一回</button>
+      <button class="btn-share-cl" onclick="shareClearOnX()">X でシェア</button>
     </div>
   </div>
 
@@ -566,8 +541,8 @@ body {
 const scenes = {
   1: {
     messages: [
-      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 1200 },
-      { text: "マジでやることない", delay: 800 }
+      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 480 },
+      { text: "マジでやることない", delay: 320 }
     ],
     choices: [
       { text: "そうなんだ", result: "next", next: 2 },
@@ -589,9 +564,9 @@ const scenes = {
   },
   2: {
     messages: [
-      { text: "そうなんだよ。", delay: 1200 },
-      { text: "あー、暇。", delay: 800 },
-      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 800 }
+      { text: "そうなんだよ。", delay: 480 },
+      { text: "あー、暇。", delay: 320 },
+      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 320 }
     ],
     choices: [
       { text: "何かしたいことあるの?", result: "next", next: 3 },
@@ -614,8 +589,8 @@ const scenes = {
   },
   3: {
     messages: [
-      { text: "んー、特には?", delay: 1200 },
-      { text: "でも、何かしたいんだよねぇ", delay: 800 }
+      { text: "んー、特には?", delay: 480 },
+      { text: "でも、何かしたいんだよねぇ", delay: 320 }
     ],
     choices: [
       { text: "その答え、私知ってるよ。", result: "next", next: 4 },
@@ -637,8 +612,8 @@ const scenes = {
   },
   4: {
     messages: [
-      { text: "ふっ、おもしれー女。", delay: 1200 },
-      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 800 }
+      { text: "ふっ、おもしれー女。", delay: 480 },
+      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 320 }
     ],
     choices: [
       { text: "(返信しない)", result: "next", next: 5, silent: true },
@@ -665,9 +640,9 @@ const scenes = {
   },
   5: {
     messages: [
-      { text: "...", delay: 2000 },
-      { text: "おーい", delay: 1200 },
-      { text: "返信ないんだけど", delay: 800 }
+      { text: "...", delay: 800 },
+      { text: "おーい", delay: 480 },
+      { text: "返信ないんだけど", delay: 320 }
     ],
     choices: [
       { text: "焦らしちゃった...! てへ!", result: "next", next: 6 },
@@ -690,9 +665,9 @@ const scenes = {
   },
   6: {
     messages: [
-      { text: "は? 何?", delay: 1200 },
-      { text: "可愛いじゃん。", delay: 800 },
-      { text: "まじで", delay: 800 }
+      { text: "は? 何?", delay: 480 },
+      { text: "可愛いじゃん。", delay: 320 },
+      { text: "まじで", delay: 320 }
     ],
     choices: [
       { text: "ねぇ! 週末映画行かない?", result: "next", next: 7 },
@@ -723,9 +698,9 @@ const scenes = {
   },
   7: {
     messages: [
-      { text: "映画?", delay: 1200 },
-      { text: "ふっ。", delay: 800 },
-      { text: "タイタニック、俺もう見たぜ?", delay: 800 }
+      { text: "映画?", delay: 480 },
+      { text: "ふっ。", delay: 320 },
+      { text: "タイタニック、俺もう見たぜ?", delay: 320 }
     ],
     choices: [
       {
@@ -816,7 +791,7 @@ async function playScene(sceneNum) {
   for (const msg of scene.messages) {
     await wait(msg.delay);
     await addHisMessage(msg.text);
-    await wait(200);
+    await wait(80);
   }
 
   isProcessing = false;
@@ -824,7 +799,7 @@ async function playScene(sceneNum) {
 }
 
 function showChoices(choices) {
-  choicesArea.innerHTML = '';
+  choicesArea.innerHTML = '<div class="choices-label">どう返す？</div>';
   choices.forEach((choice) => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
@@ -841,12 +816,12 @@ async function selectChoice(choice) {
 
   if (!choice.silent) {
     addMyMessage(choice.text);
-    await wait(400);
+    await wait(160);
   }
 
   if (choice.result === 'next') {
     currentScene = choice.next;
-    await wait(600);
+    await wait(240);
     playScene(currentScene);
   } else if (choice.result === 'gameover') {
     await playGameOver(choice);
@@ -859,28 +834,20 @@ async function playGameOver(choice) {
   if (choice.readIgnore) {
     const row = document.createElement('div');
     row.className = 'message-row him';
-    row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble" style="color:#999;font-style:italic;">(既読無視)</div>';
+    row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble" style="color:#b898c0;font-style:italic;">(既読無視)</div>';
     chatArea.appendChild(row);
     scrollToBottom();
-    await wait(1500);
+    await wait(600);
   } else {
     for (const msg of choice.responses) {
-      await wait(1000);
+      await wait(400);
       await addHisMessage(msg);
-      await wait(200);
+      await wait(80);
     }
   }
 
-  await wait(800);
+  await wait(320);
 
-  const statusEl = document.getElementById('gameover-status');
-  if (choice.blocked) {
-    statusEl.textContent = '-- ブロックされました --';
-    statusEl.className = 'gameover-status blocked';
-  } else {
-    statusEl.textContent = '-- ゲームオーバー --';
-    statusEl.className = 'gameover-status over';
-  }
   document.getElementById('gameover-reason').textContent = choice.reason;
 
   const shareBtn = document.getElementById('gameover-share-btn');
@@ -891,23 +858,23 @@ async function playGameOver(choice) {
 
 async function playClear(choice) {
   for (const msg of choice.responses) {
-    await wait(1000);
+    await wait(400);
     await addHisMessage(msg);
-    await wait(200);
+    await wait(80);
   }
 
-  await wait(1200);
+  await wait(480);
   showScreen('clear-screen');
 }
 
 function shareGameOverOnX(reason) {
-  const text = "ゲームオーバーしました\n理由: " + reason + "\nめんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
+  const text = "ゲームオーバーしました\u{1F602} 理由: " + reason + " めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
   const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
   window.open(url, '_blank');
 }
 
 function shareClearOnX() {
-  const text = "クリアしました！\nめんどくさい彼とのデートの約束を取り付けました！\nクリア率0.046%の超難関ゲーム\nめんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
+  const text = "クリアしました！\u{1F389} めんどくさい彼とのデートの約束を取り付けました！クリア率0.046%の超難関ゲーム\u{2728} めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
   const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
   window.open(url, '_blank');
 }
