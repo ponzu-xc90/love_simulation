@@ -222,7 +222,7 @@ body {
   border: 1.5px solid #f0c0dc;
   border-radius: 18px 18px 18px 4px;
   color: #8b3070;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -230,7 +230,7 @@ body {
   background: #e8a8c8;
   border-radius: 18px 18px 4px 18px;
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -261,7 +261,7 @@ body {
 
 .choices-label {
   color: #c07090;
-  font-size: 9px;
+  font-size: 11px;
   text-align: center;
   margin-bottom: 8px;
 }
@@ -272,7 +272,7 @@ body {
   border-radius: 20px;
   color: #a04080;
   padding: 9px 12px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
   font-family: inherit;
   cursor: pointer;
@@ -321,7 +321,7 @@ body {
 }
 
 .gameover-reason-text {
-  font-size: 11px;
+  font-size: 13px;
   color: #333;
   line-height: 1.9;
   text-align: center;
@@ -335,7 +335,7 @@ body {
   background: none;
   padding: 10px;
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   color: #222;
   font-family: inherit;
   cursor: pointer;
@@ -348,7 +348,7 @@ body {
   background: none;
   padding: 10px;
   text-align: center;
-  font-size: 11px;
+  font-size: 13px;
   color: #999;
   font-family: inherit;
   cursor: pointer;
@@ -412,7 +412,7 @@ body {
   padding: 10px 14px;
   width: 100%;
   color: #a04070;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.8;
 }
 
@@ -493,31 +493,25 @@ body {
   <div id="clear-screen">
     <div class="clear-top">
       <div class="clear-svg-wrap">
-        <svg width="160" height="110" viewBox="0 0 160 110">
-          <!-- Stems -->
-          <rect x="77" y="62" width="4" height="38" fill="#c8a850"/>
-          <rect x="83" y="66" width="3" height="33" fill="#d4b860" transform="rotate(9,83,66)"/>
-          <rect x="73" y="66" width="3" height="33" fill="#c8a850" transform="rotate(-9,73,66)"/>
-          <!-- Pink flower -->
-          <circle cx="50" cy="46" r="14" fill="#f0c0d8"/>
-          <circle cx="50" cy="46" r="7" fill="#dda0c0"/>
-          <circle cx="50" cy="46" r="3" fill="#ffffff" opacity="0.6"/>
-          <!-- Peach flower -->
-          <circle cx="80" cy="30" r="15" fill="#f8d0a8"/>
-          <circle cx="80" cy="30" r="7.5" fill="#e4b888"/>
-          <circle cx="80" cy="30" r="3" fill="#ffffff" opacity="0.6"/>
-          <!-- Green flower -->
-          <circle cx="110" cy="46" r="14" fill="#c8e0b0"/>
-          <circle cx="110" cy="46" r="7" fill="#a8c890"/>
-          <circle cx="110" cy="46" r="3" fill="#ffffff" opacity="0.6"/>
-          <!-- Lavender flower left -->
-          <circle cx="34" cy="64" r="11" fill="#d8b8f0"/>
-          <circle cx="34" cy="64" r="5.5" fill="#b898d8"/>
-          <circle cx="34" cy="64" r="2.5" fill="#ffffff" opacity="0.6"/>
-          <!-- Yellow flower right -->
-          <circle cx="126" cy="64" r="11" fill="#f0e0a0"/>
-          <circle cx="126" cy="64" r="5.5" fill="#d8c880"/>
-          <circle cx="126" cy="64" r="2.5" fill="#ffffff" opacity="0.6"/>
+        <svg width="160" height="110" viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="80" cy="95" rx="28" ry="8" fill="#e8c870" opacity="0.3"/>
+          <rect x="74" y="68" width="12" height="32" rx="4" fill="#c8a850"/>
+          <rect x="76" y="70" width="8" height="28" rx="3" fill="#d4b860"/>
+          <circle cx="80" cy="52" r="22" fill="#f0c0d8"/>
+          <circle cx="60" cy="58" r="16" fill="#f8d0a8"/>
+          <circle cx="100" cy="58" r="16" fill="#c8e0b0"/>
+          <circle cx="68" cy="42" r="14" fill="#d8b8f0"/>
+          <circle cx="92" cy="42" r="14" fill="#f0e0a0"/>
+          <circle cx="80" cy="36" r="13" fill="#f0c0d8"/>
+          <circle cx="80" cy="52" r="10" fill="#e8a0c0"/>
+          <circle cx="60" cy="58" r="7" fill="#f0c080"/>
+          <circle cx="100" cy="58" r="7" fill="#a0d090"/>
+          <circle cx="68" cy="42" r="6" fill="#c090e0"/>
+          <circle cx="92" cy="42" r="6" fill="#e8d080"/>
+          <circle cx="80" cy="36" r="6" fill="#e8a0c0"/>
+          <circle cx="80" cy="52" r="4" fill="#fff" opacity="0.6"/>
+          <circle cx="60" cy="58" r="3" fill="#fff" opacity="0.6"/>
+          <circle cx="100" cy="58" r="3" fill="#fff" opacity="0.6"/>
         </svg>
       </div>
       <div class="clear-congrats-label">CONGRATULATIONS</div>
@@ -541,8 +535,8 @@ body {
 const scenes = {
   1: {
     messages: [
-      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 480 },
-      { text: "マジでやることない", delay: 320 }
+      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 192 },
+      { text: "マジでやることない", delay: 128 }
     ],
     choices: [
       { text: "そうなんだ", result: "next", next: 2 },
@@ -564,9 +558,9 @@ const scenes = {
   },
   2: {
     messages: [
-      { text: "そうなんだよ。", delay: 480 },
-      { text: "あー、暇。", delay: 320 },
-      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 320 }
+      { text: "そうなんだよ。", delay: 192 },
+      { text: "あー、暇。", delay: 128 },
+      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 128 }
     ],
     choices: [
       { text: "何かしたいことあるの?", result: "next", next: 3 },
@@ -589,8 +583,8 @@ const scenes = {
   },
   3: {
     messages: [
-      { text: "んー、特には?", delay: 480 },
-      { text: "でも、何かしたいんだよねぇ", delay: 320 }
+      { text: "んー、特には?", delay: 192 },
+      { text: "でも、何かしたいんだよねぇ", delay: 128 }
     ],
     choices: [
       { text: "その答え、私知ってるよ。", result: "next", next: 4 },
@@ -612,8 +606,8 @@ const scenes = {
   },
   4: {
     messages: [
-      { text: "ふっ、おもしれー女。", delay: 480 },
-      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 320 }
+      { text: "ふっ、おもしれー女。", delay: 192 },
+      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 128 }
     ],
     choices: [
       { text: "(返信しない)", result: "next", next: 5, silent: true },
@@ -640,9 +634,9 @@ const scenes = {
   },
   5: {
     messages: [
-      { text: "...", delay: 800 },
-      { text: "おーい", delay: 480 },
-      { text: "返信ないんだけど", delay: 320 }
+      { text: "...", delay: 320 },
+      { text: "おーい", delay: 192 },
+      { text: "返信ないんだけど", delay: 128 }
     ],
     choices: [
       { text: "焦らしちゃった...! てへ!", result: "next", next: 6 },
@@ -665,9 +659,9 @@ const scenes = {
   },
   6: {
     messages: [
-      { text: "は? 何?", delay: 480 },
-      { text: "可愛いじゃん。", delay: 320 },
-      { text: "まじで", delay: 320 }
+      { text: "は? 何?", delay: 192 },
+      { text: "可愛いじゃん。", delay: 128 },
+      { text: "まじで", delay: 128 }
     ],
     choices: [
       { text: "ねぇ! 週末映画行かない?", result: "next", next: 7 },
@@ -698,9 +692,9 @@ const scenes = {
   },
   7: {
     messages: [
-      { text: "映画?", delay: 480 },
-      { text: "ふっ。", delay: 320 },
-      { text: "タイタニック、俺もう見たぜ?", delay: 320 }
+      { text: "映画?", delay: 192 },
+      { text: "ふっ。", delay: 128 },
+      { text: "タイタニック、俺もう見たぜ?", delay: 128 }
     ],
     choices: [
       {
@@ -791,7 +785,7 @@ async function playScene(sceneNum) {
   for (const msg of scene.messages) {
     await wait(msg.delay);
     await addHisMessage(msg.text);
-    await wait(80);
+    await wait(32);
   }
 
   isProcessing = false;
@@ -816,12 +810,12 @@ async function selectChoice(choice) {
 
   if (!choice.silent) {
     addMyMessage(choice.text);
-    await wait(160);
+    await wait(64);
   }
 
   if (choice.result === 'next') {
     currentScene = choice.next;
-    await wait(240);
+    await wait(96);
     playScene(currentScene);
   } else if (choice.result === 'gameover') {
     await playGameOver(choice);
@@ -837,16 +831,16 @@ async function playGameOver(choice) {
     row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble" style="color:#b898c0;font-style:italic;">(既読無視)</div>';
     chatArea.appendChild(row);
     scrollToBottom();
-    await wait(600);
+    await wait(240);
   } else {
     for (const msg of choice.responses) {
-      await wait(400);
+      await wait(160);
       await addHisMessage(msg);
-      await wait(80);
+      await wait(32);
     }
   }
 
-  await wait(320);
+  await wait(128);
 
   document.getElementById('gameover-reason').textContent = choice.reason;
 
@@ -858,23 +852,23 @@ async function playGameOver(choice) {
 
 async function playClear(choice) {
   for (const msg of choice.responses) {
-    await wait(400);
+    await wait(160);
     await addHisMessage(msg);
-    await wait(80);
+    await wait(32);
   }
 
-  await wait(480);
+  await wait(192);
   showScreen('clear-screen');
 }
 
 function shareGameOverOnX(reason) {
-  const text = "ゲームオーバーしました\u{1F602} 理由: " + reason + " めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
+  const text = "ゲームオーバーしました 理由: " + reason + " めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
   const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
   window.open(url, '_blank');
 }
 
 function shareClearOnX() {
-  const text = "クリアしました！\u{1F389} めんどくさい彼とのデートの約束を取り付けました！クリア率0.046%の超難関ゲーム\u{2728} めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
+  const text = "クリアしました！ めんどくさい彼とのデートの約束を取り付けました！クリア率0.046%の超難関ゲーム めんどくさい彼ゲーム https://ponzu-xc90.github.io/love_simulation/ #めんどくさい彼ゲーム";
   const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text);
   window.open(url, '_blank');
 }
