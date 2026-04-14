@@ -518,8 +518,8 @@ body {
 const scenes = {
   1: {
     messages: [
-      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 192 },
-      { text: "マジでやることない", delay: 128 }
+      { text: "今週末、予定入ってないし暇なんだよなぁ", delay: 576 },
+      { text: "マジでやることない", delay: 384 }
     ],
     choices: [
       { text: "そうなんだ", result: "next", next: 2 },
@@ -541,9 +541,9 @@ const scenes = {
   },
   2: {
     messages: [
-      { text: "そうなんだよ。", delay: 192 },
-      { text: "あー、暇。", delay: 128 },
-      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 128 }
+      { text: "そうなんだよ。", delay: 576 },
+      { text: "あー、暇。", delay: 384 },
+      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 384 }
     ],
     choices: [
       { text: "何かしたいことあるの?", result: "next", next: 3 },
@@ -566,8 +566,8 @@ const scenes = {
   },
   3: {
     messages: [
-      { text: "んー、特には?", delay: 192 },
-      { text: "でも、何かしたいんだよねぇ", delay: 128 }
+      { text: "んー、特には?", delay: 576 },
+      { text: "でも、何かしたいんだよねぇ", delay: 384 }
     ],
     choices: [
       { text: "その答え、私知ってるよ。", result: "next", next: 4 },
@@ -589,8 +589,8 @@ const scenes = {
   },
   4: {
     messages: [
-      { text: "ふっ、おもしれー女。", delay: 192 },
-      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 128 }
+      { text: "ふっ、おもしれー女。", delay: 576 },
+      { text: "聞かせてもらおうじゃねーか、その答え。", delay: 384 }
     ],
     choices: [
       { text: "(返信しない)", result: "next", next: 5, silent: true },
@@ -617,9 +617,9 @@ const scenes = {
   },
   5: {
     messages: [
-      { text: "...", delay: 320 },
-      { text: "おーい", delay: 192 },
-      { text: "返信ないんだけど", delay: 128 }
+      { text: "...", delay: 960 },
+      { text: "おーい", delay: 576 },
+      { text: "返信ないんだけど", delay: 384 }
     ],
     choices: [
       { text: "焦らしちゃった...! てへ!", result: "next", next: 6 },
@@ -642,9 +642,9 @@ const scenes = {
   },
   6: {
     messages: [
-      { text: "は? 何?", delay: 192 },
-      { text: "可愛いじゃん。", delay: 128 },
-      { text: "まじで", delay: 128 }
+      { text: "は? 何?", delay: 576 },
+      { text: "可愛いじゃん。", delay: 384 },
+      { text: "まじで", delay: 384 }
     ],
     choices: [
       { text: "ねぇ! 週末映画行かない?", result: "next", next: 7 },
@@ -675,9 +675,9 @@ const scenes = {
   },
   7: {
     messages: [
-      { text: "映画?", delay: 192 },
-      { text: "ふっ。", delay: 128 },
-      { text: "タイタニック、俺もう見たぜ?", delay: 128 }
+      { text: "映画?", delay: 576 },
+      { text: "ふっ。", delay: 384 },
+      { text: "タイタニック、俺もう見たぜ?", delay: 384 }
     ],
     choices: [
       {
@@ -768,7 +768,7 @@ async function playScene(sceneNum) {
   for (const msg of scene.messages) {
     await wait(msg.delay);
     await addHisMessage(msg.text);
-    await wait(32);
+    await wait(96);
   }
 
   isProcessing = false;
@@ -793,12 +793,12 @@ async function selectChoice(choice) {
 
   if (!choice.silent) {
     addMyMessage(choice.text);
-    await wait(64);
+    await wait(192);
   }
 
   if (choice.result === 'next') {
     currentScene = choice.next;
-    await wait(96);
+    await wait(288);
     playScene(currentScene);
   } else if (choice.result === 'gameover') {
     await playGameOver(choice);
@@ -814,16 +814,17 @@ async function playGameOver(choice) {
     row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble" style="color:#b898c0;font-style:italic;">(既読無視)</div>';
     chatArea.appendChild(row);
     scrollToBottom();
-    await wait(240);
+    await wait(720);
   } else {
     for (const msg of choice.responses) {
-      await wait(160);
+      await wait(480);
       await addHisMessage(msg);
-      await wait(32);
+      await wait(96);
     }
   }
 
-  await wait(128);
+  await wait(384);
+  await wait(2000);
 
   document.getElementById('gameover-reason').textContent = choice.reason;
 
@@ -835,12 +836,12 @@ async function playGameOver(choice) {
 
 async function playClear(choice) {
   for (const msg of choice.responses) {
-    await wait(160);
+    await wait(480);
     await addHisMessage(msg);
-    await wait(32);
+    await wait(96);
   }
 
-  await wait(192);
+  await wait(576);
   showScreen('clear-screen');
 }
 
