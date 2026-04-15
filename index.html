@@ -768,7 +768,7 @@ async function playScene(sceneNum) {
   for (const msg of scene.messages) {
     await wait(msg.delay);
     await addHisMessage(msg.text);
-    await wait(96);
+    await wait(1000);
   }
 
   isProcessing = false;
@@ -793,7 +793,7 @@ async function selectChoice(choice) {
 
   if (!choice.silent) {
     addMyMessage(choice.text);
-    await wait(192);
+    await wait(1000);
   }
 
   if (choice.result === 'next') {
