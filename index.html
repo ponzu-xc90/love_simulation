@@ -104,7 +104,7 @@ body {
 #chat-screen {
   display: none;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 }
 
 .chat-header {
@@ -235,10 +235,12 @@ body {
 .choices-area {
   background: #fdeef7;
   padding: 12px 10px;
-  display: flex;
+  display: none;
   flex-direction: column;
   flex-shrink: 0;
   border-top: 1.5px solid #f0c0dc;
+  position: sticky;
+  bottom: 0;
 }
 
 .choices-label {
@@ -763,6 +765,7 @@ function wait(ms) {
 async function playScene(sceneNum) {
   isProcessing = true;
   choicesArea.innerHTML = '';
+  choicesArea.style.display = 'none';
   const scene = scenes[sceneNum];
 
   for (const msg of scene.messages) {
@@ -784,12 +787,14 @@ function showChoices(choices) {
     btn.onclick = () => selectChoice(choice);
     choicesArea.appendChild(btn);
   });
+  choicesArea.style.display = 'flex';
 }
 
 async function selectChoice(choice) {
   if (isProcessing) return;
   isProcessing = true;
   choicesArea.innerHTML = '';
+  choicesArea.style.display = 'none';
 
   if (!choice.silent) {
     addMyMessage(choice.text);
