@@ -242,12 +242,10 @@ body {
 .choices-area {
   background: #fdeef7;
   padding: 12px 10px;
-  display: none;
+  display: flex;
   flex-direction: column;
   flex-shrink: 0;
   border-top: 1.5px solid #f0c0dc;
-  position: sticky;
-  bottom: 0;
 }
 
 .choices-label {
@@ -747,6 +745,8 @@ function addHisMessage(text) {
     row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble">' + escapeHtml(text) + '</div>';
     chatArea.appendChild(row);
     scrollToBottom();
+    const chatAreaEl = document.getElementById('chat-area');
+    if (chatAreaEl) chatAreaEl.scrollTop = chatAreaEl.scrollHeight;
     resolve();
   });
 }
@@ -757,6 +757,8 @@ function addMyMessage(text) {
   row.innerHTML = '<div class="read-marker">既読</div><div class="bubble">' + escapeHtml(text) + '</div>';
   chatArea.appendChild(row);
   scrollToBottom();
+  const chatAreaEl = document.getElementById('chat-area');
+  if (chatAreaEl) chatAreaEl.scrollTop = chatAreaEl.scrollHeight;
 }
 
 function escapeHtml(text) {
@@ -772,7 +774,6 @@ function wait(ms) {
 async function playScene(sceneNum) {
   isProcessing = true;
   choicesArea.innerHTML = '';
-  choicesArea.style.display = 'none';
   const scene = scenes[sceneNum];
 
   for (const msg of scene.messages) {
@@ -794,14 +795,12 @@ function showChoices(choices) {
     btn.onclick = () => selectChoice(choice);
     choicesArea.appendChild(btn);
   });
-  choicesArea.style.display = 'flex';
 }
 
 async function selectChoice(choice) {
   if (isProcessing) return;
   isProcessing = true;
   choicesArea.innerHTML = '';
-  choicesArea.style.display = 'none';
 
   if (!choice.silent) {
     addMyMessage(choice.text);
