@@ -105,6 +105,7 @@ body {
   display: none;
   flex-direction: column;
   height: 100vh;
+  overflow: hidden;
 }
 
 .chat-header {
@@ -829,7 +830,7 @@ async function playGameOver(choice) {
   }
 
   await wait(384);
-  await wait(2000);
+  await wait(1500);
 
   document.getElementById('gameover-reason').textContent = choice.reason;
 
