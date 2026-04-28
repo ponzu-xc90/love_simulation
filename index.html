@@ -18,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
+  align-items: stretch;
   overflow: hidden;
 }
 
@@ -25,7 +26,7 @@ body {
   width: 100%;
   max-width: 430px;
   height: 100dvh;
-  max-height: 750px;
+  max-height: 100dvh;
   background: #fff5fb;
   display: flex;
   flex-direction: column;
@@ -104,7 +105,7 @@ body {
 #chat-screen {
   display: none;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -246,6 +247,8 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   border-top: 1.5px solid #f0c0dc;
+  min-height: 185px;
+  height: 185px;
 }
 
 .choices-label {
@@ -735,7 +738,7 @@ function resetGame() {
 }
 
 function scrollToBottom() {
-  chatArea.scrollTop = chatArea.scrollHeight;
+  setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50);
 }
 
 function addHisMessage(text) {
@@ -800,7 +803,7 @@ function showChoices(choices) {
 async function selectChoice(choice) {
   if (isProcessing) return;
   isProcessing = true;
-  choicesArea.innerHTML = '';
+  choicesArea.innerHTML = '<div class="choices-label"></div>';
 
   if (!choice.silent) {
     addMyMessage(choice.text);
