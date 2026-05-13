@@ -105,7 +105,7 @@ body {
 #chat-screen {
   display: none;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -247,8 +247,6 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   border-top: 1.5px solid #f0c0dc;
-  min-height: 185px;
-  height: 185px;
 }
 
 .choices-label {
@@ -453,9 +451,9 @@ body {
 
   <!-- Opening -->
   <div id="opening">
-    <div class="opening-love-game-label">LOVE GAME</div>
-    <h1>めんどくさい彼ゲーム</h1>
-    <p class="opening-subtitle">デートの約束を取り付けろ！</p>
+    <div class="opening-love-game-label">恋愛シミュレーションゲーム</div>
+    <h1>拒否デート侍&quot;ムリオ&quot;</h1>
+    <p class="opening-subtitle" style="font-size:14px;line-height:1.8;text-align:center;color:#8b3070;margin:0 8px;">「とにかくデートに誘えない」で有名な&quot;ムリオ&quot;くん。<br>あなたは無事デートに誘うことができるのか！？</p>
     <img src="character.png" alt="キャラクター" class="opening-character-img">
     <button class="btn-start" onclick="startGame()">ゲームスタート</button>
   </div>
@@ -463,7 +461,7 @@ body {
   <!-- Chat -->
   <div id="chat-screen">
     <div class="chat-header">
-      <div class="chat-header-icon">彼</div>
+      <img src="avatar.png" class="chat-header-icon" style="object-fit:cover;" alt="彼">
       <div class="chat-header-info">
         <div class="chat-header-name">かれし</div>
         <div class="chat-header-status">オンライン</div>
@@ -532,16 +530,16 @@ const scenes = {
       { text: "マジでやることない", delay: 384 }
     ],
     choices: [
-      { text: "そうなんだ", result: "next", next: 2 },
+      { text: "そうなんだ！", result: "next", next: 2 },
       {
-        text: "私も暇だよ!",
+        text: "私も暇だよ！",
         result: "gameover",
         responses: ["そうですか。", "おつかれしたー。"],
         blocked: true,
         reason: "彼は急激に興味を失くしたようです。そんな彼を責めないでください。"
       },
       {
-        text: "映画でも見に行かない?",
+        text: "映画でも見に行かない？",
         result: "gameover",
         responses: ["俺タイタニックもう見たから。", "おつかれしたー。"],
         blocked: true,
@@ -553,19 +551,19 @@ const scenes = {
     messages: [
       { text: "そうなんだよ。", delay: 576 },
       { text: "あー、暇。", delay: 384 },
-      { text: "誰か遊びに誘ってくれねーかなぁ?", delay: 384 }
+      { text: "誰か遊びに誘ってくれねーかなぁ？", delay: 384 }
     ],
     choices: [
-      { text: "何かしたいことあるの?", result: "next", next: 3 },
+      { text: "何かしたいことあるの？", result: "next", next: 3 },
       {
-        text: "私も予定空いてるよ!",
+        text: "私も予定空いてるよ！",
         result: "gameover",
         responses: ["そうですか。", "おつかれしたー。"],
         blocked: false,
         reason: "彼は猛烈に興味を失くしてしまいました。意味分からないですよね。"
       },
       {
-        text: "誰かいたら良いね!",
+        text: "誰かいたら良いね！",
         result: "gameover",
         responses: [],
         blocked: false,
@@ -576,20 +574,20 @@ const scenes = {
   },
   3: {
     messages: [
-      { text: "んー、特には?", delay: 576 },
+      { text: "んー、特には？", delay: 576 },
       { text: "でも、何かしたいんだよねぇ", delay: 384 }
     ],
     choices: [
       { text: "その答え、私知ってるよ。", result: "next", next: 4 },
       {
-        text: "じゃあ、私が提案してあげる!",
+        text: "じゃあ、私が提案してあげる！",
         result: "gameover",
         responses: ["いや、結構っす。", "おつかれしたー。"],
         blocked: true,
         reason: "せっかく提案してあげたのに意味の分からない奴ですね。そんな奴こっちから願い下げですね。"
       },
       {
-        text: "カフェでも行かない?",
+        text: "カフェでも行かない？",
         result: "gameover",
         responses: ["俺、水か牛乳しか飲まねーから。", "おつかれしたー。"],
         blocked: true,
@@ -605,20 +603,20 @@ const scenes = {
     choices: [
       { text: "(返信しない)", result: "next", next: 5, silent: true },
       {
-        text: "教えなーい!",
+        text: "教えなーい！",
         result: "gameover",
         responses: ["そうですか。"],
         blocked: true,
         reason: "ここでの焦らしは彼に通用しませんでした。"
       },
       {
-        text: "私とデートしたらいいじゃん!",
+        text: "私とデートしたらいいじゃん！",
         result: "gameover",
         responses: [
-          "バ、バカヤロー!!!",
-          "そ、そんなつもりで言ったんじゃねーし!!",
-          "勘違いすんなよな!!",
-          "あーーー、もう!!!"
+          "バ、バカヤロー！！！",
+          "そ、そんなつもりで言ったんじゃねーし！！",
+          "勘違いすんなよな！！",
+          "あーーー、もう！！！"
         ],
         blocked: true,
         reason: "彼はかなりシャイだったので、ブロックしちゃいました。"
@@ -632,19 +630,19 @@ const scenes = {
       { text: "返信ないんだけど", delay: 384 }
     ],
     choices: [
-      { text: "焦らしちゃった...! てへ!", result: "next", next: 6 },
+      { text: "焦らしちゃった...！ てへ！", result: "next", next: 6 },
       {
         text: "(さらに返信しない)",
         result: "gameover",
         silent: true,
-        responses: ["なんなんだよ!", "もう!"],
+        responses: ["なんなんだよ！", "もう！"],
         blocked: false,
         reason: "既読無視は可哀想です。返信してあげましょう。"
       },
       {
-        text: "ほら、君自身が答え持ってるじゃん!",
+        text: "ほら、君自身が答え持ってるじゃん！",
         result: "gameover",
-        responses: ["は?", "意味わかんね、怖っ。"],
+        responses: ["は？", "意味わかんね、怖っ。"],
         blocked: true,
         reason: "あまり変なこと言うと嫌われちゃいます。注意しましょう!"
       }
@@ -652,31 +650,31 @@ const scenes = {
   },
   6: {
     messages: [
-      { text: "は? 何?", delay: 576 },
+      { text: "は？ 何？", delay: 576 },
       { text: "可愛いじゃん。", delay: 384 },
       { text: "まじで", delay: 384 }
     ],
     choices: [
-      { text: "ねぇ! 週末映画行かない?", result: "next", next: 7 },
+      { text: "ねぇ！ 週末映画行かない？", result: "next", next: 7 },
       {
-        text: "ねぇ! 週末水族館行かない?",
+        text: "ねぇ！ 週末水族館行かない？",
         result: "gameover",
         responses: ["俺、実家水族館だから。", "パス"],
         blocked: true,
         reason: "彼のプロフィールは事前に調べておきましょう。"
       },
       {
-        text: "ねぇ! 週末うちに来ない?",
+        text: "ねぇ！ 週末うちに来ない？",
         result: "gameover",
         responses: [
-          "さすがにいきなり家に行くというのはいかがなものかな?",
+          "さすがにいきなり家に行くというのはいかがなものかな？",
           "僕も男だから下心はないと言えば嘘になるが。",
           "さすがに順序というものを弁えているつもりなのだが。",
-          "これは僕の頭が堅すぎるのかな? いや、そんなことはないだろう。",
+          "これは僕の頭が堅すぎるのかな？ いや、そんなことはないだろう。",
           "非常に申し訳ないが、そのお誘いは乗れないな。",
-          "不純異性交友と言うべきか?",
+          "不純異性交友と言うべきか？",
           "僕は僕を大切にする。",
-          "君ももう少し自分を大切にしたらどうだろうか?"
+          "君ももう少し自分を大切にしたらどうだろうか？"
         ],
         blocked: true,
         reason: "彼の何かに火をつけてしまったようです。"
@@ -685,25 +683,25 @@ const scenes = {
   },
   7: {
     messages: [
-      { text: "映画?", delay: 576 },
+      { text: "映画？", delay: 576 },
       { text: "ふっ。", delay: 384 },
-      { text: "タイタニック、俺もう見たぜ?", delay: 384 }
+      { text: "タイタニック、俺もう見たぜ？", delay: 384 }
     ],
     choices: [
       {
-        text: "タイタニックは何度見ても最高だよ!",
+        text: "タイタニックは何度見ても最高だよ！",
         result: "gameover",
         responses: ["いや、それはない。", "2回で十分だよ。"],
         blocked: true,
         reason: "あと少し! 惜しい! タイタニックを買い被りすぎましたね。"
       },
       {
-        text: "いいから! コナン見に行くよ!",
+        text: "いいから！ コナン見に行くよ！",
         result: "clear",
-        responses: ["バーロー!", "真実はいつも一つとは限らねぇんだぜ!!"]
+        responses: ["バーロー！", "真実はいつも一つとは限らねぇんだぜ！！"]
       },
       {
-        text: "タイタニックって古いよ! w 何か新しい映画観ようよ!",
+        text: "タイタニックって古いよ！ w 何か新しい映画観ようよ！",
         result: "gameover",
         responses: [],
         blocked: false,
@@ -738,14 +736,14 @@ function resetGame() {
 }
 
 function scrollToBottom() {
-  setTimeout(() => { chatArea.scrollTop = chatArea.scrollHeight; }, 50);
+  chatArea.scrollTop = chatArea.scrollHeight;
 }
 
 function addHisMessage(text) {
   return new Promise(resolve => {
     const row = document.createElement('div');
     row.className = 'message-row him';
-    row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble">' + escapeHtml(text) + '</div>';
+    row.innerHTML = '<img src="avatar.png" class="msg-icon" style="object-fit:cover;" alt="彼"><div class="bubble">' + escapeHtml(text) + '</div>';
     chatArea.appendChild(row);
     scrollToBottom();
     const chatAreaEl = document.getElementById('chat-area');
@@ -803,7 +801,7 @@ function showChoices(choices) {
 async function selectChoice(choice) {
   if (isProcessing) return;
   isProcessing = true;
-  choicesArea.innerHTML = '<div class="choices-label"></div>';
+  choicesArea.innerHTML = '';
 
   if (!choice.silent) {
     addMyMessage(choice.text);
@@ -825,7 +823,7 @@ async function playGameOver(choice) {
   if (choice.readIgnore) {
     const row = document.createElement('div');
     row.className = 'message-row him';
-    row.innerHTML = '<div class="msg-icon">彼</div><div class="bubble" style="color:#b898c0;font-style:italic;">(既読無視)</div>';
+    row.innerHTML = '<img src="avatar.png" class="msg-icon" style="object-fit:cover;" alt="彼"><div class="bubble" style="color:#b898c0;font-style:italic;">(既読無視)</div>';
     chatArea.appendChild(row);
     scrollToBottom();
     await wait(720);
